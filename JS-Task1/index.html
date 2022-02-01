@@ -20,18 +20,44 @@
       <li class="box box-to-select-2" id="box-7"></li>
       <li class="box box-to-select-2" id="box-8"></li>
     </ul>
+    <button onclick="resetColor()">Reset Color</button>
   </div>
 
   <script>
-      //Get element by id
+    //Get element by id
+    const clickBox = document.getElementById("box-1");
+    clickBox.addEventListener("click", function (event) {
+      event.target.style.backgroundColor = "powderblue";
+    })
 
-      //Get element by className
+    //Get element by className
+    var moveOnBox = document.getElementsByClassName("box-to-select");
+    //Iterate boxes through a For of loop to add functionallity
+    for (const key of moveOnBox) {
+      key.addEventListener("click", function (event1) {
+        event.target.style.backgroundColor = "gold";
+      });
+    }
 
-      //Iterate boxes through a For of loop to add functionallity
-      //Get Element with qeurySelector
+    //Get Element with qeurySelector
+    const qeuryBox = document.querySelector("#box-5");
+    qeuryBox.addEventListener("click", function (event) {
+      event.target.style.backgroundColor = "yellowgreen";
+    })
 
-      //Get element by querySelectorAll
-      //Iterate boxes through a For of loop to add functionallity
+    //Get element by querySelectorAll
+    const qeuryBoxes = document.querySelectorAll(".box-to-select-2");
+    //Iterate boxes through a For of loop to add functionallity
+    for (const key of qeuryBoxes) {
+      key.addEventListener("click", function (event) {
+        event.target.style.backgroundColor = "crimson";
+      });
+    }
+    //
+    function resetColor(event) {
+      event.target.style.backgroundColor = null;
+    }
+
   </script>
 </body>
 

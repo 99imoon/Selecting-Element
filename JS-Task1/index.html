@@ -20,16 +20,18 @@
       <li class="box box-to-select-2" id="box-7"></li>
       <li class="box box-to-select-2" id="box-8"></li>
     </ul>
-    <button onclick="resetColor()">Reset Color</button>
+    <!--<button id="btn-rest">Reset Color</button>-->
   </div>
 
   <script>
+    //Reset color button
+    var resetBtn = document.getElementById("#btn-rest");
     //Get element by id
     const clickBox = document.getElementById("box-1");
     clickBox.addEventListener("click", function (event) {
       event.target.style.backgroundColor = "powderblue";
     })
-
+    
     //Get element by className
     var moveOnBox = document.getElementsByClassName("box-to-select");
     //Iterate boxes through a For of loop to add functionallity
@@ -52,10 +54,6 @@
       key.addEventListener("click", function (event) {
         event.target.style.backgroundColor = "crimson";
       });
-    }
-    //Reset color 
-    function resetColor(event) {
-      event.target.style.backgroundColor = null;
     }
 
   </script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Selecting an Element!</title>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <ul class="container">
+      <li class="box" id="box-1"></li>
+      <li class="box box-to-select" id="box-2"></li>
+      <li class="box box-to-select" id="box-3"></li>
+      <li class="box box-to-select" id="box-4"></li>
+      <li class="box" id="box-5"></li>
+      <li class="box box-to-select-2" id="box-6"></li>
+      <li class="box box-to-select-2" id="box-7"></li>
+      <li class="box box-to-select-2" id="box-8"></li>
+    </ul>
+    <!--<button id="btn-rest">Reset Color</button>-->
+  </div>
+
+  <script>
+    //Reset color button
+    var resetBtn = document.getElementById("#btn-rest");
+    //Get element by id
+    const clickBox = document.getElementById("box-1");
+    clickBox.addEventListener("click", function (event) {
+      event.target.style.backgroundColor = "powderblue";
+    })
+    
+    //Get element by className
+    var moveOnBox = document.getElementsByClassName("box-to-select");
+    //Iterate boxes through a For of loop to add functionallity
+    for (const key of moveOnBox) {
+      key.addEventListener("click", function (event1) {
+        event.target.style.backgroundColor = "gold";
+      });
+    }
+
+    //Get Element with qeurySelector
+    const qeuryBox = document.querySelector("#box-5");
+    qeuryBox.addEventListener("click", function (event) {
+      event.target.style.backgroundColor = "yellowgreen";
+    })
+
+    //Get element by querySelectorAll
+    const qeuryBoxes = document.querySelectorAll(".box-to-select-2");
+    //Iterate boxes through a For of loop to add functionallity
+    for (const key of qeuryBoxes) {
+      key.addEventListener("click", function (event) {
+        event.target.style.backgroundColor = "crimson";
+      });
+    }
+
+  </script>
+</body>
+
+</html>
